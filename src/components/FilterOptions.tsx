@@ -1,7 +1,6 @@
-// components/FilterOptions.tsx
 "use client";
+// components/FilterOptions.tsx
 import React, { useState } from 'react';
-import ContactListView from './ContactListView';
 
 interface Contact {
   id: string;
@@ -34,11 +33,10 @@ const FilterOptions: React.FC = () => {
   const filteredContacts = applyFilters(contacts, filters);
 
   return (
-    <div>
-      <input onChange={(e) => handleFilterChange('location', e.target.value)} placeholder="Location" />
-      <input onChange={(e) => handleFilterChange('industry', e.target.value)} placeholder="Industry" />
+    <div className="flex space-x-2">
+      <input onChange={(e) => handleFilterChange('location', e.target.value)} placeholder="Location" className="p-2 border rounded" />
+      <input onChange={(e) => handleFilterChange('industry', e.target.value)} placeholder="Industry" className="p-2 border rounded" />
       {/* Additional filters */}
-      <ContactListView category={filteredContacts} />
     </div>
   );
 };
