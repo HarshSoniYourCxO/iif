@@ -10,7 +10,7 @@ const Layout: React.FC = () => {
   return (
     <div>
       <Navbar onSelectCategory={setSelectedCategory} />
-      <main className="p-4 h-screen">
+      <main className="p-4 h-fit">
         <ContactListView category={selectedCategory} />
       </main>
     </div>
